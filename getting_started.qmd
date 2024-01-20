@@ -1,0 +1,26 @@
+---
+title: "Getting Started"
+author: "Andrea Golfari"
+format: 
+    html:
+        theme:
+            dark: darkly
+editor: visual
+---
+
+# R and RStudio
+
+R is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story [here](https://www.r-project.org/about.html).
+
+One of the advantages of R is that it is historically the *lingua franca* of statistics, and is used by statisticians and data scientists worldwide; this means that it is often the first language used to implement new econometric methods and statistical models. In addition, its large user base means that it is very easy to find help and support on the web.
+
+R is a modular language, and its functionality can be extended by installing specific packages (libraries) for a wide range of applications including econometrics, finance, machine learning, data visualization, and many more. There are currently over 15,000 packages available on the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
+
+RStudio is an integrated development environment (IDE) for R. It is highly customizable and includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. While it is theoretically not necessary to use RStudio to run R code, it is highly recommended as it makes the coding experience immensely more pleasant and efficient.
+
+To be able to manipulate the codes on this platform on your own machine, you first need to download and install [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/) (in this order). If necessary you can find detailed instructions on how to do this [here](https://rstudio-education.github.io/hopr/starting.html).
+
+
+
+In addition, a large amount of learning material is freely available on the web, e.g. [here](https://education.rstudio.com/learn/beginner/) and [here](https://www.w3schools.com/r/default.asp) for *R* and [here](https://www.python.org/about/gettingstarted/), and [here](https://www.w3schools.com/python/python_intro.asp) for *Python*. However, to get started in can be best to directly delve into some of the codes on this platform and learn by doing. To this end, the following "cheatsheets" that provide a concise overview of key functions are useful:
+
