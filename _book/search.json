@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "getting_started.html",
+    "href": "getting_started.html",
+    "title": "2  Getting Started",
+    "section": "",
+    "text": "3 R and RStudio\nR is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story here.\nOne of the advantages of R is that it is historically the lingua franca of statistics, and is used by statisticians and data scientists worldwide; this means that it is often the first language used to implement new econometric methods and statistical models. In addition, its large user base means that it is very easy to find help and support on the web.\nR is a modular language, and its functionality can be extended by installing specific packages (libraries) for a wide range of applications including econometrics, finance, machine learning, data visualization, and many more. There are currently over 15,000 packages available on the Comprehensive R Archive Network (CRAN).\nRStudio is an integrated development environment (IDE) for R. It is highly customizable and includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. While it is theoretically not necessary to use RStudio to run R code, it is highly recommended as it makes the coding experience immensely more pleasant and efficient.\nTo be able to manipulate the codes on this platform on your own machine, you first need to download and install R and RStudio (in this order). If necessary you can find detailed instructions on how to do this here.\nIn addition, a large amount of learning material is freely available on the web, e.g. here and here for R and here, and here for Python. However, to get started in can be best to directly delve into some of the codes on this platform and learn by doing. To this end, the following “cheatsheets” that provide a concise overview of key functions are useful:"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "\n1  Introduction\n",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]

@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: "Macroeconomics with R"
+  author: "Andrea Golfari"
+  date: today
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - getting_started.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: 
+        light: cosmo
+        dark: darkly
+    code-link: TRUE
+    code-copy: TRUE
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
+df-print: paged
