@@ -8,7 +8,7 @@ format:
 editor: visual
 ---
 
-# R and RStudio
+## R and RStudio
 
 R is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story [here](https://www.r-project.org/about.html).
 
@@ -20,7 +20,29 @@ RStudio is an integrated development environment (IDE) for R. It is highly custo
 
 To be able to manipulate the codes on this platform on your own machine, you first need to download and install [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/) (in this order). If necessary you can find detailed instructions on how to do this [here](https://rstudio-education.github.io/hopr/starting.html).
 
+## Learning Resources
+
+Because the R programming language is so versatile, there are often many ways to achieve something. This is especially true when you consider that for many applications there exist multiple competing packages, each with its strengths and weaknesses. Luckily, there is a large community of users and developers that are happy to share their knowledge and experience, and a plethora of great learning resources are available for free on the web.
+
+Whenever you are having issues in your R programming, remember that chances are many users experienced the same problem before you, and that you can find the solution by searching on the web. No matter how experienced you are, you will always need to look up the documentation of a function or package, or search for a solution to a specific problem. Nobody remembers the exact syntax of *all* functions and packages: there is no shame in this and accessing documentation and/or looking up resources online is (possibly the most important) part of the learning process.
+
+Here are some useful resources I find myself constantly accessing and referring to while programming in R:
+
+* Online Books:
+    1. **R for Data Science** by Hadley Wickham and Garrett Grolemund: [https://r4ds.had.co.nz/](https://r4ds.had.co.nz/)
+    This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of       the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.
+
+* Cheat sheets: RStudio developer Posit publishes a [multitude of cheat sheets](https://posit.co/resources/cheatsheets/) for the most commonly used functions in R as        well as in a variety of packages. In particular:
+    1. [**RStudio IDE Cheatsheet**](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
+    2. [**The Base R Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf)
+  
 
 
-In addition, a large amount of learning material is freely available on the web, e.g. [here](https://education.rstudio.com/learn/beginner/) and [here](https://www.w3schools.com/r/default.asp) for *R* and [here](https://www.python.org/about/gettingstarted/), and [here](https://www.w3schools.com/python/python_intro.asp) for *Python*. However, to get started in can be best to directly delve into some of the codes on this platform and learn by doing. To this end, the following "cheatsheets" that provide a concise overview of key functions are useful:
+
+
+In particular, the [Stack Overflow](https://stackoverflow.com/) community is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://stackoverflow.com/help/how-to-ask).
+
+In addition, a large amount of learning material is freely available on the web, e.g. [here](https://education.rstudio.com/learn/beginner/) and [here](https://www.w3schools.com/r/default.asp) for *R* 
+
+However, to get started in can be best to directly delve into some of the codes on this platform and learn by doing. To this end, the following "cheatsheets" that provide a concise overview of key functions are useful:
 
