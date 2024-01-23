@@ -28,21 +28,24 @@ Whenever you are having issues in your R programming, remember that chances are 
 
 Here are some useful resources I find myself constantly accessing and referring to while programming in R:
 
-* Online Books:
-    1. **R for Data Science** by Hadley Wickham and Garrett Grolemund: [https://r4ds.had.co.nz/](https://r4ds.had.co.nz/)
-    This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of       the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.
-
-* Cheat sheets: RStudio developer Posit publishes a [multitude of cheat sheets](https://posit.co/resources/cheatsheets/) for the most commonly used functions in R as        well as in a variety of packages. In particular:
+* **Online Tutorials**
+    1. A large amount of learning material is freely available on the web, for example         [here](https://education.rstudio.com/learn/beginner/) and [here](https://www.w3schools.com/r/default.asp).  
+    
+* **Cheat Sheets:** RStudio developer Posit publishes a [multitude of cheat sheets](https://posit.co/resources/cheatsheets/) for the most commonly used functions in R as well as in a variety of packages.  
+In particular, among them:
     1. [**RStudio IDE Cheatsheet**](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
     2. [**The Base R Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf)
-  
+    3. [**dplyr Cheatsheet**](https://rstudio.github.io/cheatsheets/data-transformation.pdf) for data transformation and              manipulation
+    4. [**ggplot2 Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf) for data visualization 
 
+* **Online Communities**
+    1. [**Stack Overflow**](https://stackoverflow.com/) is a question and answer site for professional and enthusiast programmers. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://stackoverflow.com/help/how-to-ask). But in truth, 99.99% of the times just doing a search on the site will lead you to a question that has already been asked and answered.
+    2. [**RStudio Community**](https://community.rstudio.com/) is a forum for RStudio users. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://community.rstudio.com/t/faq-how-to-do-reproducible-minimal-examples/1060).
+    3. [**Econometrics Stack Exchange**](https://economics.stackexchange.com/) is a question and answer site for those who study, teach, research and apply economics and econometrics. 
+    4. [**R-bloggers**](https://www.r-bloggers.com/) is a blog aggregator for content contributed by bloggers who write about         R. It is a great place to find tutorials and examples of R code.
 
-
-
-In particular, the [Stack Overflow](https://stackoverflow.com/) community is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://stackoverflow.com/help/how-to-ask).
-
-In addition, a large amount of learning material is freely available on the web, e.g. [here](https://education.rstudio.com/learn/beginner/) and [here](https://www.w3schools.com/r/default.asp) for *R* 
-
-However, to get started in can be best to directly delve into some of the codes on this platform and learn by doing. To this end, the following "cheatsheets" that provide a concise overview of key functions are useful:
+* **Online Books:**
+    1. [**R for Data Science**](https://r4ds.had.co.nz/) by @wickham2023:   
+    This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of       the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.
+    
 

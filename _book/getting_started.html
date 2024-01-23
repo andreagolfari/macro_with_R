@@ -21,7 +21,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -138,7 +157,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link active" data-scroll-target="#r-and-rstudio"><span class="header-section-number">3</span> R and RStudio</a></li>
+  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link active" data-scroll-target="#r-and-rstudio"><span class="header-section-number">2.1</span> R and RStudio</a></li>
+  <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources"><span class="header-section-number">2.2</span> Learning Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -168,16 +188,53 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="r-and-rstudio" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> R and RStudio</h1>
+<section id="r-and-rstudio" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="r-and-rstudio"><span class="header-section-number">2.1</span> R and RStudio</h2>
 <p>R is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story <a href="https://www.r-project.org/about.html">here</a>.</p>
 <p>One of the advantages of R is that it is historically the <em>lingua franca</em> of statistics, and is used by statisticians and data scientists worldwide; this means that it is often the first language used to implement new econometric methods and statistical models. In addition, its large user base means that it is very easy to find help and support on the web.</p>
 <p>R is a modular language, and its functionality can be extended by installing specific packages (libraries) for a wide range of applications including econometrics, finance, machine learning, data visualization, and many more. There are currently over 15,000 packages available on the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a>.</p>
 <p>RStudio is an integrated development environment (IDE) for R. It is highly customizable and includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. While it is theoretically not necessary to use RStudio to run R code, it is highly recommended as it makes the coding experience immensely more pleasant and efficient.</p>
 <p>To be able to manipulate the codes on this platform on your own machine, you first need to download and install <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> (in this order). If necessary you can find detailed instructions on how to do this <a href="https://rstudio-education.github.io/hopr/starting.html">here</a>.</p>
-<p>In addition, a large amount of learning material is freely available on the web, e.g.&nbsp;<a href="https://education.rstudio.com/learn/beginner/">here</a> and <a href="https://www.w3schools.com/r/default.asp">here</a> for <em>R</em> and <a href="https://www.python.org/about/gettingstarted/">here</a>, and <a href="https://www.w3schools.com/python/python_intro.asp">here</a> for <em>Python</em>. However, to get started in can be best to directly delve into some of the codes on this platform and learn by doing. To this end, the following “cheatsheets” that provide a concise overview of key functions are useful:</p>
+</section>
+<section id="learning-resources" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="learning-resources"><span class="header-section-number">2.2</span> Learning Resources</h2>
+<p>Because the R programming language is so versatile, there are often many ways to achieve something. This is especially true when you consider that for many applications there exist multiple competing packages, each with its strengths and weaknesses. Luckily, there is a large community of users and developers that are happy to share their knowledge and experience, and a plethora of great learning resources are available for free on the web.</p>
+<p>Whenever you are having issues in your R programming, remember that chances are many users experienced the same problem before you, and that you can find the solution by searching on the web. No matter how experienced you are, you will always need to look up the documentation of a function or package, or search for a solution to a specific problem. Nobody remembers the exact syntax of <em>all</em> functions and packages: there is no shame in this and accessing documentation and/or looking up resources online is (possibly the most important) part of the learning process.</p>
+<p>Here are some useful resources I find myself constantly accessing and referring to while programming in R:</p>
+<ul>
+<li><strong>Online Tutorials</strong>
+<ol type="1">
+<li>A large amount of learning material is freely available on the web, for example <a href="https://education.rstudio.com/learn/beginner/">here</a> and <a href="https://www.w3schools.com/r/default.asp">here</a>.</li>
+</ol></li>
+<li><strong>Cheat Sheets:</strong> RStudio developer Posit publishes a <a href="https://posit.co/resources/cheatsheets/">multitude of cheat sheets</a> for the most commonly used functions in R as well as in a variety of packages.<br>
+In particular, among them:
+<ol type="1">
+<li><a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html"><strong>RStudio IDE Cheatsheet</strong></a></li>
+<li><a href="https://rstudio.github.io/cheatsheets/base-r.pdf"><strong>The Base R Cheatsheet</strong></a></li>
+<li><a href="https://rstudio.github.io/cheatsheets/data-transformation.pdf"><strong>dplyr Cheatsheet</strong></a> for data transformation and manipulation</li>
+<li><a href="https://rstudio.github.io/cheatsheets/base-r.pdf"><strong>ggplot2 Cheatsheet</strong></a> for data visualization</li>
+</ol></li>
+<li><strong>Online Communities</strong>
+<ol type="1">
+<li><a href="https://stackoverflow.com/"><strong>Stack Overflow</strong></a> is a question and answer site for professional and enthusiast programmers. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions <a href="https://stackoverflow.com/help/how-to-ask">here</a>. But in truth, 99.99% of the times just doing a search on the site will lead you to a question that has already been asked and answered.</li>
+<li><a href="https://community.rstudio.com/"><strong>RStudio Community</strong></a> is a forum for RStudio users. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions <a href="https://community.rstudio.com/t/faq-how-to-do-reproducible-minimal-examples/1060">here</a>.</li>
+<li><a href="https://economics.stackexchange.com/"><strong>Econometrics Stack Exchange</strong></a> is a question and answer site for those who study, teach, research and apply economics and econometrics.</li>
+<li><a href="https://www.r-bloggers.com/"><strong>R-bloggers</strong></a> is a blog aggregator for content contributed by bloggers who write about R. It is a great place to find tutorials and examples of R code.</li>
+</ol></li>
+<li><strong>Online Books:</strong>
+<ol type="1">
+<li><a href="https://r4ds.had.co.nz/"><strong>R for Data Science</strong></a> by <span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="references.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>:<br>
+This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.</li>
+</ol></li>
+</ul>
+<p><span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="references.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-wickham2023" class="csl-entry" role="listitem">
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for Data Science</em>. 2nd ed. O’Reilly Media, Inc. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
