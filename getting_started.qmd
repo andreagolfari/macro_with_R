@@ -29,7 +29,10 @@ Whenever you are having issues in your R programming, remember that chances are 
 Here are some useful resources I find myself constantly accessing and referring to while programming in R:
 
 * **Online Tutorials**
-    1. A large amount of learning material is freely available on the web, for example         [here](https://education.rstudio.com/learn/beginner/) and [here](https://www.w3schools.com/r/default.asp).  
+Many learning tutorials are freely available on the web, for example
+    1. [RStudio Education](https://education.rstudio.com/learn/beginner/) 
+    2. [W3Schools R Tutorial](https://www.w3schools.com/r/default.asp)
+    3. [Swirl](https://swirlstats.com/) is an R package that teaches you R programming and data science functions, right              inside the R console!
     
 * **Cheat Sheets:** RStudio developer Posit publishes a [multitude of cheat sheets](https://posit.co/resources/cheatsheets/) for the most commonly used functions in R as well as in a variety of packages.  
 In particular, among them:
@@ -47,5 +50,202 @@ In particular, among them:
 * **Online Books:**
     1. [**R for Data Science**](https://r4ds.had.co.nz/) by @wickham2023:   
     This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of       the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.
+    2. [**Hands-On Programming with R**](https://rstudio-education.github.io/hopr/) by @grolemund.
     
+
+## R Basics
+### R as a calculator
+
+The most basic use of R is a calculator. You can input formulas in the `console` tab of RStudio and execute them by pressing `Enter`. The consele is an interactive environment where you can input your code and have the results displayed. 
+
+For example, try typing `2+2` and pressing `Enter`. You should see the result `4` printed in the console.
+
+```{r}
+2+2
+```
+
+The usual arithmetic operators are available in R:
+
+* `+` for addition
+* `-` for subtraction
+* `*` for multiplication
+* `/` for division
+* `^` for exponentiation
+* `%%` for modulo (remainder of division).
+
+Of course, you can also use parentheses to group operations.
+
+```{r}
+2*(100/4)+(2^3)
+```
+
+You can also assign values to variables and use them later in your calculations. In R we use the *assignment operator* `<-` to assign values to variables. For example, typing `x <- 2` creates a variable `x` and assigns a value of 2 and pressing `Enter`. You should see nothing printed in the console; however, in the `Environment` tab of RStudio you should see the variable `x` has been created and now carries the value of 2. 
+
+```{r}
+x <- 2
+```
+
+You can confirm this by typing `x` in the console and pressing `Enter`. You should see the value of `x` printed in the console.
+
+```{r}
+x
+```
+
+### Working in a R script
+
+While working in the console is great for performing quick calculations and testing out code, in general you will want to save your code in a file to be able to execute it again later, revise it and/or extend it.
+For this purpose, we use R scripts. An R script is simply a text file containing R code, and you can create a new R script by clicking on the `File` menu and selecting `New File` and then `R Script`. Alternatively, you can use the keyboard shortcut `Ctrl+Shift+N` on a Windows computer or `Cmd+Shift+N` on a Mac.
+
+As you see you now have an `untitled.R` file open in a pane of RStudio, and you can now type your code in it and execute it (line-by-line or selecting a chunk) by pressing `Ctrl+Enter` on a Windows computer or `Cmd+Enter` on a Mac. Note that you can also execute the entire script by clicking on the `Source` button in the top right corner of the script pane. This will execute the entire script, line by line, and print the results in the console. In the `File` menu you will find the usual options to save or rename your R script.
+
+
+
+
+
+```{r}
+#| output: false
+################################### R Basics ###########################
+
+#In the R script you write code and comments
+#any line starting with # is a comment and it is NOT executed
+
+## First things first: set the working directory to the the folder in which your R files are stored using: setwd("C:/")
+# note that you need to separate folders by slashes /
+
+#Let's define some variables
+s = 0.05
+Y = 10
+
+#We can also assign several variables the same value at once
+C = I = R = 2
+
+#For displaying them we simply call the name of the object and execute the relevant line
+Y
+C
+
+#We can define new variables using existing ones
+W = Y - R
+W
+
+#R has a vast amount of built in functions, for example
+max(10,2,100,-3)
+sqrt(9)
+abs(-13)
+
+#you can find out more about these by using the help function, e.g.:?max()
+
+#How can you delete stuff? Use the remove function rm()
+#for individual objects
+rm(Y)
+#if you want to remove everything
+rm(list=ls(all=TRUE))
+
+#You can also assign text (a string) to a variable
+text1 = 'Reggaeton'
+text2 = "Bad Bunny"
+#note "text" is the same as 'text' and a string can contain spaces
+#You use the paste function to combine strings
+paste(text1, text2)
+
+#R uses standard operators like +, -, *
+#for exponents use ^
+3^2
+
+
+########################### if statements and loops ######################
+
+#sometimes we need to introduce if conditions into our code
+#The syntax is
+#if condition { do something }
+a = 10
+b = 13
+if (b>a) {
+  print("b is bigger")
+}
+#we can also tell R what to do in case the condition is not fulfilled
+b=10
+if (b>a) {
+  print("b is bigger")
+} else {
+  print("b not bigger")
+}
+
+
+#Next we will look at loops which are a key tool to repeat tasks such as solving
+#a theoretical model again and again to find its equilibrium.
+#The basic structure is:
+for (i in 1:5){
+  print(i)
+}
+
+#Let's use it to solve a simple Keynesian cross model of the form
+#Y=C+I
+#C=c0+c1Y
+#Define exogenous parameters
+c0=2
+c1=0.8
+I=10
+#set initial values for two endogenous variable
+Y=C=1
+#Use a for loop to solve it
+C
+Y
+for (i in 1:100){
+  Y = C+I
+  C = c0+c1*Y
+}
+C
+Y
+#solution is Y=(I+c0)/(1-c1)=60
+
+#What is special about this loop is that it uses the values from the previous iteration
+#to define the values of the next, because it starts with assigning a value to Y
+#and then uses that value to assign a new value to C and in the next iteration it
+#uses this new value for C to define a new value for Y etc.
+
+
+########################### Data structures ##########################
+#In most applications we produce outputs which do not consist of a single number.
+#Often we have an entire stream of results, or we want to analyse data and have to store larger amounts of data
+#R has a variety of data structures for this purpose.
+#let's clean up first
+rm(list=ls(all=TRUE))
+
+####Vectors 
+#We can create an empty vector and fill it later (with results of our model for example)
+vec1 = vector(length=3)
+#we can define vectors explicitly using the c() function (c for column?)
+vec2 = c(1,2,3)
+vec3 = c(6,7,8)
+#we can also use the sequence operator
+vec4 = 1:10
+#and we can define the step size
+vec5 = seq(1,2,0.1)
+vec5
+#we can call specific entries using square brackets
+vec5[4]
+#if we want to access more elements at once
+vec5[c(4,1)]
+
+####Matrices
+#define a matrix: 3 rows and 2 columns, all elements equal to 0
+mat1 = matrix(0, nrow=3, ncol=2)
+mat1
+#we can also fill it with specific values
+mat2 = matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+mat2
+#access specific elements (columns,rows)
+mat2[3,1]
+#access entire rows or columns
+mat2[,1]
+mat2[1,]
+#access sub matrices
+mat2[c(1,2),]
+## Combine two column vectors in a matrix
+mat3=cbind(vec1, vec2)
+mat3
+## Combine two row vectors in a matrix
+mat4=rbind(vec1, vec2)
+mat4
+```
 
