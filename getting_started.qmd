@@ -137,13 +137,42 @@ IM <- 3835.1   # Imports
 GDP <- C + I + G + (EX - IM)
 GDP
 ```
-We can similarly compute Net Exports $NX$ and save the value to a new variable:
+We can similarly compute Net Exports (NX) and save the value to a newly created variable:
 
 ```{r}
 NX <- EX - IM
 NX
 ```
+In economics, we often want to convert a variable to its natural logarithm. Even before installing any additional package, base R has many built-in mathematical functions, including the natural logarithm is computed using the `log()` function. For example, to compute the natural logarithm of GDP and assign the value to a new variable `lnGDP` we can type:
 
+```{r}
+lnGDP <- log(GDP)
+lnGDP
+```
+
+Among the many useful functions built-in base R we have: 
+
+- `exp()`, the exponential function
+- `sqrt()`, the square root
+- `abs()`, the absolute value
+- `log10()` and `log2()`, respectively the logarithm to base 10 and 2
+- `cos()`, `sin()`, `tan()`, `acos()`, `asin()`, `atan()`, the trigonometric functions and their inverses
+
+Sometimes you might not remember the arguments that a function requires, or some detail about its mechanics. In such cases you can type (in the console or in a script) `help(function_name)` or `?function_name` and press `Enter`. This will open the help page for the function in the `Help` tab of RStudio, which will include a description of the function, its arguments, references and some practical examples of usage.
+
+For example, we you can type `?log` and press `Enter` to see the help page for the `log()` function.
+
+```{r}
+?log
+```
+
+As you can see in the `Usage` section og the help page, `log()` takes two arguments: `x` and `base`. The `x` argument is the number for which you want to compute the logarithm, and the `base` argument is the base of the logarithm. The expression `base = exp(1)` means that if no `base` argument is specified by default `exp(1)` is used as base (i.e. the natural logarithm is computed). It is quite common for functions to have one or a few required arguments and many optional arguments for which a default value is pre-specified if you do not explicitly specify a different one.
+
+```{r}
+
+```{r}
+
+```{r}
 
 ```{r}
 rm(list=ls())
