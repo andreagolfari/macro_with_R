@@ -143,6 +143,9 @@ We can similarly compute Net Exports (NX) and save the value to a newly created 
 NX <- EX - IM
 NX
 ```
+
+### Built-in functions
+
 In economics, we often want to convert a variable to its natural logarithm. Even before installing any additional package, base R has many built-in mathematical functions, including the natural logarithm is computed using the `log()` function. For example, to compute the natural logarithm of GDP and assign the value to a new variable `lnGDP` we can type:
 
 ```{r}
@@ -152,6 +155,7 @@ lnGDP
 
 Among the many useful functions built-in base R we have: 
 
+- `max` and `min`, to find the maximum and minimum of a set of numbers
 - `exp()`, the exponential function
 - `sqrt()`, the square root
 - `abs()`, the absolute value
@@ -166,13 +170,55 @@ For example, we you can type `?log` and press `Enter` to see the help page for t
 ?log
 ```
 
-As you can see in the `Usage` section og the help page, `log()` takes two arguments: `x` and `base`. The `x` argument is the number for which you want to compute the logarithm, and the `base` argument is the base of the logarithm. The expression `base = exp(1)` means that if no `base` argument is specified by default `exp(1)` is used as base (i.e. the natural logarithm is computed). It is quite common for functions to have one or a few required arguments and many optional arguments for which a default value is pre-specified if you do not explicitly specify a different one.
+As you can see in the `Usage` section og the help page, `log()` takes two arguments: `x` and `base`. The `x` argument is the number for which you want to compute the logarithm, and the `base` argument is the base of the logarithm. The expression `base = exp(1)` means that if no `base` argument is specified by default `exp(1)` is used as base (i.e. the natural logarithm is computed). It is quite common for functions to have one or a few required arguments and many optional arguments for which a default value may be pre-specified if you do not explicitly state a different one.
+
+Until now, we have printed the value of a variable by simply typing its name. However, we can also use the `print()` function to print the value of a variable. For example, to print the value of `lnGDP` we can type:
 
 ```{r}
+print(lnGDP)
+```
+The `print()` function allows us to do more complicated things, for example to print a message along with the value of a variable. Let's say that we want to print the message "The natural logarithm of GDP is:" followed by the value of `lnGDP`, so that the user can better understand what the value refers to, we can type:
 
 ```{r}
+print(paste("The natural logarithm of GDP is:", lnGDP))
+```
+`paste` is another built-in function that allows us to concatenate *strings* of text. In the example above we first concatenated the string *"The natural logarithm of GDP is:"* with the value of the variable `lnGDP` to create a single string. Then, the function `print()` printed this concatenated string in the console.
+
+::: {.callout-note}
+## Single and double quotes
+Differently from other programming languages, in R you can use either single quotes `'` or double quotes `"` interchangeably to define a string of text. In other words `print("Hello")` and `print('Hello')` are equivalent.
+
+The R documentation suggests that double quotes are preferred over single quotes, some programmers prefer to use double quotes for character strings and single quotes for other purposes, and can feel quite strongly about these rules. Ultimately, however, this is a matter of personal style and you can choose the one you prefer.
+
+No matter your choice, it is important to be consistent in your use of single and double quotes throughout your code, as consistency in style improves readability and intelligibility of your work.
+:::
+
+### if statements
+
+If statements are use to execute some code only if a certain condition is met. The syntax of the if statement is `if (condition) { code to be executed }`.
+
+Imagine that we are interested in printing to the console the value of `lnGDP` only if it is greater than 10. We can use an if statement to do this:
 
 ```{r}
+if (lnGDP > 10) {
+  print(paste("The natural logarithm of GDP is larger than 10, and more precisely it is:", lnGDP))
+}
+```
+We can also add an `else` statement to execute some code if the condition is **not** met. The syntax of the if-else statement is then `if (condition) { code to be executed if the condition is met } else { code to be executed if the condition is not met }`. To test how this works, let's change the value of `lnGDP` to 9 and run the following code:
+
+```{r}
+lnGDP <- 9
+
+if (lnGDP > 10) {
+  print(paste("The natural logarithm of GDP is larger than 10, and more precisely it is:", lnGDP))
+} else {
+  print(paste("The natural logarithm of GDP is not larger than 10, and more precisely it is:", lnGDP))
+}
+```
+
+### Loops
+
+In economics, we often want to solve a model by iterating over a set of equations. For example, consider the following simple Keynesian model:
 
 ```{r}
 rm(list=ls())
