@@ -116,10 +116,7 @@ You can copy these *snippets* of code into your R script and execute them line b
 
 Consider the usual identity for Gross Domestic Product (GDP):
 
-$$GDP=C+I+G+NX$$
-where $$NX=EX-IM$$
-We can now use R to calculate GDP for different values of consumption, investment, government spending, exports and imports.
-
+$$GDP=C+I+G+NX$$ where $$NX=EX-IM$$ We can now use R to calculate GDP for different values of consumption, investment, government spending, exports and imports.
 
 ```{r}
 #########################   YOUR FIRST R SCRIPT  #############################
@@ -137,6 +134,7 @@ IM <- 3835.1   # Imports
 GDP <- C + I + G + (EX - IM)
 GDP
 ```
+
 We can similarly compute Net Exports (NX) and save the value to a newly created variable:
 
 ```{r}
@@ -153,14 +151,14 @@ lnGDP <- log(GDP)
 lnGDP
 ```
 
-Among the many useful functions built-in base R we have: 
+Among the many useful functions built-in base R we have:
 
-- `max` and `min`, to find the maximum and minimum of a set of numbers
-- `exp()`, the exponential function
-- `sqrt()`, the square root
-- `abs()`, the absolute value
-- `log10()` and `log2()`, respectively the logarithm to base 10 and 2
-- `cos()`, `sin()`, `tan()`, `acos()`, `asin()`, `atan()`, the trigonometric functions and their inverses
+-   `max` and `min`, to find the maximum and minimum of a set of numbers
+-   `exp()`, the exponential function
+-   `sqrt()`, the square root
+-   `abs()`, the absolute value
+-   `log10()` and `log2()`, respectively the logarithm to base 10 and 2
+-   `cos()`, `sin()`, `tan()`, `acos()`, `asin()`, `atan()`, the trigonometric functions and their inverses
 
 Sometimes you might not remember the arguments that a function requires, or some detail about its mechanics. In such cases you can type (in the console or in a script) `help(function_name)` or `?function_name` and press `Enter`. This will open the help page for the function in the `Help` tab of RStudio, which will include a description of the function, its arguments, references and some practical examples of usage.
 
@@ -177,15 +175,18 @@ Until now, we have printed the value of a variable by simply typing its name. Ho
 ```{r}
 print(lnGDP)
 ```
+
 The `print()` function allows us to do more complicated things, for example to print a message along with the value of a variable. Let's say that we want to print the message "The natural logarithm of GDP is:" followed by the value of `lnGDP`, so that the user can better understand what the value refers to, we can type:
 
 ```{r}
 print(paste("The natural logarithm of GDP is:", lnGDP))
 ```
+
 `paste` is another built-in function that allows us to concatenate *strings* of text. In the example above we first concatenated the string *"The natural logarithm of GDP is:"* with the value of the variable `lnGDP` to create a single string. Then, the function `print()` printed this concatenated string in the console.
 
-::: {.callout-note}
+::: callout-note
 ## Single and double quotes
+
 Differently from other programming languages, in R you can use either single quotes `'` or double quotes `"` interchangeably to define a string of text. In other words `print("Hello")` and `print('Hello')` are equivalent.
 
 The R documentation suggests that double quotes are preferred over single quotes, some programmers prefer to use double quotes for character strings and single quotes for other purposes, and can feel quite strongly about these rules. Ultimately, however, this is a matter of personal style and you can choose the one you prefer.
@@ -204,6 +205,7 @@ if (lnGDP > 10) {
   print(paste("The natural logarithm of GDP is larger than 10, and more precisely it is:", lnGDP))
 }
 ```
+
 We can also add an `else` statement to execute some code if the condition is **not** met. The syntax of the if-else statement is then `if (condition) { code to be executed if the condition is met } else { code to be executed if the condition is not met }`. To test how this works, let's change the value of `lnGDP` to 9 and run the following code:
 
 ```{r}
@@ -220,6 +222,8 @@ if (lnGDP > 10) {
 
 In economics, we often want to solve a model by iterating over a set of equations. For example, consider the following simple Keynesian model:
 
+TEST
+
 ```{r}
 rm(list=ls())
 
@@ -227,6 +231,7 @@ rm(list=ls())
 c0=2
 c1=0.8
 I=10
+
 #set initial values for two endogenous variable
 Y=C=1
 #Use a for loop to solve it
