@@ -222,7 +222,7 @@ if (lnGDP > 10) {
 
 In economics, we often want to solve a model by iterating over a set of equations. For example, consider the following simple Keynesian model:
 
-TEST TEST TEST
+RETEST
 
 ```{r}
 rm(list=ls())
