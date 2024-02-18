@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.290">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Andrea Golfari">
-
 <title>Macroeconomics with R - 2&nbsp; Getting Started</title>
 <style>
 code{white-space: pre-wrap;}
@@ -20,6 +17,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -42,7 +73,6 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -62,8 +92,7 @@ div.csl-indent {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -81,17 +110,13 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
+}</script><link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 </head>
-
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
@@ -102,13 +127,9 @@ div.csl-indent {
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Macroeconomics with R</a> 
         <div class="sidebar-tools-main">
@@ -123,7 +144,7 @@ div.csl-indent {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
@@ -148,26 +169,32 @@ div.csl-indent {
   </div>
 </li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link active" data-scroll-target="#r-and-rstudio"><span class="header-section-number">2.1</span> R and RStudio</a></li>
+<li><a href="#r-and-rstudio" id="toc-r-and-rstudio" class="nav-link active" data-scroll-target="#r-and-rstudio"><span class="header-section-number">2.1</span> R and RStudio</a></li>
   <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources"><span class="header-section-number">2.2</span> Learning Resources</a></li>
+  <li>
+<a href="#r-basics" id="toc-r-basics" class="nav-link" data-scroll-target="#r-basics"><span class="header-section-number">2.3</span> R Basics</a>
+  <ul class="collapse">
+<li><a href="#r-as-a-calculator" id="toc-r-as-a-calculator" class="nav-link" data-scroll-target="#r-as-a-calculator"><span class="header-section-number">2.3.1</span> R as a calculator</a></li>
+  <li><a href="#working-with-r-scripts" id="toc-working-with-r-scripts" class="nav-link" data-scroll-target="#working-with-r-scripts"><span class="header-section-number">2.3.2</span> Working with R scripts</a></li>
+  <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions"><span class="header-section-number">2.3.3</span> Built-in functions</a></li>
+  <li><a href="#if-statements" id="toc-if-statements" class="nav-link" data-scroll-target="#if-statements"><span class="header-section-number">2.3.4</span> if statements</a></li>
+  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops"><span class="header-section-number">2.3.5</span> Loops</a></li>
   </ul>
-</nav>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Getting Started</span>
+</h1>
 </div>
 
 
@@ -186,59 +213,465 @@ div.csl-indent {
   </div>
   
 
-</header>
-
-<section id="r-and-rstudio" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="r-and-rstudio"><span class="header-section-number">2.1</span> R and RStudio</h2>
+</header><section id="r-and-rstudio" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="r-and-rstudio">
+<span class="header-section-number">2.1</span> R and RStudio</h2>
 <p>R is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story <a href="https://www.r-project.org/about.html">here</a>.</p>
 <p>One of the advantages of R is that it is historically the <em>lingua franca</em> of statistics, and is used by statisticians and data scientists worldwide; this means that it is often the first language used to implement new econometric methods and statistical models. In addition, its large user base means that it is very easy to find help and support on the web.</p>
 <p>R is a modular language, and its functionality can be extended by installing specific packages (libraries) for a wide range of applications including econometrics, finance, machine learning, data visualization, and many more. There are currently over 15,000 packages available on the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a>.</p>
 <p>RStudio is an integrated development environment (IDE) for R. It is highly customizable and includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. While it is theoretically not necessary to use RStudio to run R code, it is highly recommended as it makes the coding experience immensely more pleasant and efficient.</p>
 <p>To be able to manipulate the codes on this platform on your own machine, you first need to download and install <a href="https://cran.r-project.org/">R</a> and <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> (in this order). If necessary you can find detailed instructions on how to do this <a href="https://rstudio-education.github.io/hopr/starting.html">here</a>.</p>
-</section>
-<section id="learning-resources" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="learning-resources"><span class="header-section-number">2.2</span> Learning Resources</h2>
+</section><section id="learning-resources" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="learning-resources">
+<span class="header-section-number">2.2</span> Learning Resources</h2>
 <p>Because the R programming language is so versatile, there are often many ways to achieve something. This is especially true when you consider that for many applications there exist multiple competing packages, each with its strengths and weaknesses. Luckily, there is a large community of users and developers that are happy to share their knowledge and experience, and a plethora of great learning resources are available for free on the web.</p>
 <p>Whenever you are having issues in your R programming, remember that chances are many users experienced the same problem before you, and that you can find the solution by searching on the web. No matter how experienced you are, you will always need to look up the documentation of a function or package, or search for a solution to a specific problem. Nobody remembers the exact syntax of <em>all</em> functions and packages: there is no shame in this and accessing documentation and/or looking up resources online is (possibly the most important) part of the learning process.</p>
 <p>Here are some useful resources I find myself constantly accessing and referring to while programming in R:</p>
 <ul>
-<li><strong>Online Tutorials</strong>
+<li>
+<strong>Online Tutorials</strong> Many learning tutorials are freely available on the web, for example
 <ol type="1">
-<li>A large amount of learning material is freely available on the web, for example <a href="https://education.rstudio.com/learn/beginner/">here</a> and <a href="https://www.w3schools.com/r/default.asp">here</a>.</li>
-</ol></li>
-<li><strong>Cheat Sheets:</strong> RStudio developer Posit publishes a <a href="https://posit.co/resources/cheatsheets/">multitude of cheat sheets</a> for the most commonly used functions in R as well as in a variety of packages.<br>
+<li><a href="https://education.rstudio.com/learn/beginner/">RStudio Education</a></li>
+<li><a href="https://www.w3schools.com/r/default.asp">W3Schools R Tutorial</a></li>
+<li>
+<a href="https://swirlstats.com/">Swirl</a> is an R package that teaches you R programming and data science functions, right inside the R console!</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>
+<strong>Cheat Sheets:</strong> RStudio developer Posit publishes a <a href="https://posit.co/resources/cheatsheets/">multitude of cheat sheets</a> for the most commonly used functions in R as well as in a variety of packages.<br>
 In particular, among them:
 <ol type="1">
 <li><a href="https://rstudio.github.io/cheatsheets/html/rstudio-ide.html"><strong>RStudio IDE Cheatsheet</strong></a></li>
 <li><a href="https://rstudio.github.io/cheatsheets/base-r.pdf"><strong>The Base R Cheatsheet</strong></a></li>
-<li><a href="https://rstudio.github.io/cheatsheets/data-transformation.pdf"><strong>dplyr Cheatsheet</strong></a> for data transformation and manipulation</li>
-<li><a href="https://rstudio.github.io/cheatsheets/base-r.pdf"><strong>ggplot2 Cheatsheet</strong></a> for data visualization</li>
-</ol></li>
-<li><strong>Online Communities</strong>
-<ol type="1">
-<li><a href="https://stackoverflow.com/"><strong>Stack Overflow</strong></a> is a question and answer site for professional and enthusiast programmers. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions <a href="https://stackoverflow.com/help/how-to-ask">here</a>. But in truth, 99.99% of the times just doing a search on the site will lead you to a question that has already been asked and answered.</li>
-<li><a href="https://community.rstudio.com/"><strong>RStudio Community</strong></a> is a forum for RStudio users. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions <a href="https://community.rstudio.com/t/faq-how-to-do-reproducible-minimal-examples/1060">here</a>.</li>
-<li><a href="https://economics.stackexchange.com/"><strong>Econometrics Stack Exchange</strong></a> is a question and answer site for those who study, teach, research and apply economics and econometrics.</li>
-<li><a href="https://www.r-bloggers.com/"><strong>R-bloggers</strong></a> is a blog aggregator for content contributed by bloggers who write about R. It is a great place to find tutorials and examples of R code.</li>
-</ol></li>
-<li><strong>Online Books:</strong>
-<ol type="1">
-<li><a href="https://r4ds.had.co.nz/"><strong>R for Data Science</strong></a> by <span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="references.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>:<br>
-This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.</li>
-</ol></li>
+<li>
+<a href="https://rstudio.github.io/cheatsheets/data-transformation.pdf"><strong>dplyr Cheatsheet</strong></a> for data transformation and manipulation</li>
+<li>
+<a href="https://rstudio.github.io/cheatsheets/base-r.pdf"><strong>ggplot2 Cheatsheet</strong></a> for data visualization</li>
+</ol>
+</li>
 </ul>
-<p><span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="references.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span></p>
+<ul>
+<li>
+<strong>Online Communities</strong>
+<ol type="1">
+<li>
+<a href="https://stackoverflow.com/"><strong>Stack Overflow</strong></a> is a question and answer site for professional and enthusiast programmers. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions <a href="https://stackoverflow.com/help/how-to-ask">here</a>. But in truth, 99.99% of the times just doing a search on the site will lead you to a question that has already been asked and answered.</li>
+<li>
+<a href="https://community.rstudio.com/"><strong>RStudio Community</strong></a> is a forum for RStudio users. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions <a href="https://community.rstudio.com/t/faq-how-to-do-reproducible-minimal-examples/1060">here</a>.</li>
+<li>
+<a href="https://economics.stackexchange.com/"><strong>Econometrics Stack Exchange</strong></a> is a question and answer site for those who study, teach, research and apply economics and econometrics.</li>
+<li>
+<a href="https://www.r-bloggers.com/"><strong>R-bloggers</strong></a> is a blog aggregator for content contributed by bloggers who write about R. It is a great place to find tutorials and examples of R code.</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>
+<strong>Online Books:</strong>
+<ol type="1">
+<li>
+<a href="https://r4ds.had.co.nz/"><strong>R for Data Science</strong></a> by <span class="citation" data-cites="wickham2023">Wickham, Çetinkaya-Rundel, and Grolemund (<a href="references.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>:<br>
+This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.</li>
+<li>
+<a href="https://rstudio-education.github.io/hopr/"><strong>Hands-On Programming with R</strong></a> by <span class="citation" data-cites="grolemund">Grolemund (<a href="references.html#ref-grolemund" role="doc-biblioref">2014</a>)</span>.</li>
+</ol>
+</li>
+</ul></section><section id="r-basics" class="level2" data-number="2.3"><h2 data-number="2.3" class="anchored" data-anchor-id="r-basics">
+<span class="header-section-number">2.3</span> R Basics</h2>
+<section id="r-as-a-calculator" class="level3" data-number="2.3.1"><h3 data-number="2.3.1" class="anchored" data-anchor-id="r-as-a-calculator">
+<span class="header-section-number">2.3.1</span> R as a calculator</h3>
+<p>The most basic use of R is a calculator. You can input formulas in the <code>console</code> tab of RStudio and execute them by pressing <code>Enter</code>. The consele is an interactive environment where you can input your code and have the results displayed.</p>
+<p>For example, try typing <code>2+2</code> and pressing <code>Enter</code>. You should see the result <code>4</code> printed in the console.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2</span><span class="op">+</span><span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>The usual arithmetic operators are available in R:</p>
+<ul>
+<li>
+<code>+</code> for addition</li>
+<li>
+<code>-</code> for subtraction</li>
+<li>
+<code>*</code> for multiplication</li>
+<li>
+<code>/</code> for division</li>
+<li>
+<code>^</code> for exponentiation</li>
+<li>
+<code>%%</code> for modulo (remainder of division).</li>
+</ul>
+<p>Of course, you can also use parentheses to group operations.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fl">2</span><span class="op">*</span><span class="op">(</span><span class="fl">100</span><span class="op">/</span><span class="fl">4</span><span class="op">)</span><span class="op">+</span><span class="op">(</span><span class="fl">2</span><span class="op">^</span><span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 58</code></pre>
+</div>
+</div>
+<p>You can also assign values to variables and use them later in your calculations. In R we use the <em>assignment operator</em> <code>&lt;-</code> to assign values to variables. For example, typing <code>x &lt;- 2</code> creates a variable <code>x</code> and assigns a value of 2 and pressing <code>Enter</code>. You should see nothing printed in the console; however, in the <code>Environment</code> tab of RStudio you should see the variable <code>x</code> has been created and now carries the value of 2.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can confirm this by typing <code>x</code> in the console and pressing <code>Enter</code>. You should see the value of <code>x</code> printed in the console.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section><section id="working-with-r-scripts" class="level3" data-number="2.3.2"><h3 data-number="2.3.2" class="anchored" data-anchor-id="working-with-r-scripts">
+<span class="header-section-number">2.3.2</span> Working with R scripts</h3>
+<p>While working in the console is great for performing quick calculations and testing out code, in general you will want to save your code in a file to be able to execute it again later, revise it and/or extend it. For this purpose, we use R scripts. An R script is simply a text file containing R code, and you can create a new R script by clicking on the <code>File</code> menu and selecting <code>New File</code> and then <code>R Script</code>. Alternatively, you can use the keyboard shortcut <code>Ctrl + Shift + N</code> on a Windows computer or <code>Cmd + Shift + N</code> on a Mac.</p>
+<p>As you see you now have an <code>untitled.R</code> file open in a pane of RStudio, and you can now type your code in it and execute it (line by line or selecting a chunk) by pressing <code>Ctrl + Enter</code> on a Windows computer or <code>Cmd + Enter</code> on a Mac.</p>
+<p>Note that you can also execute the entire script by clicking on the <code>Source</code> button in the top right corner of the script pane. This will execute the entire script, line by line, and print the results in the console. In the <code>File</code> menu you will find the usual options to save or rename your R script.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comments <code>#</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In R every line that starts with a <code>#</code> is a <strong>comment</strong> and is not executed. Comments are useful to explain what your code does and make it more readable. It is very good practice to comment your code, either to make it more accessible to other users or to remind your future self what you were doing.</p>
+<p>You can also “comment out” a line of code when you want to test something without deleting the original code. To do this, simply add a <code>#</code> at the beginning of the line of code you want to comment out. This way, the line will not be executed, but it will still be there for you to use later.</p>
+</div>
+</div>
+<p>You can copy these <em>snippets</em> of code into your R script and execute them line by line to see what happens. Try to change the values of the variables and see what happens.</p>
+<p>Consider the usual identity for Gross Domestic Product (GDP):</p>
+<p><span class="math display">\[GDP=C+I+G+NX\]</span> where <span class="math display">\[NX=EX-IM\]</span> We can now use R to calculate GDP for different values of consumption, investment, government spending, exports and imports.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#########################   YOUR FIRST R SCRIPT  #############################</span></span>
+<span><span class="co"># Note: lines start with a # are not executed</span></span>
+<span><span class="co"># Also, any part of a line following a # is not executed</span></span>
+<span></span>
+<span><span class="co"># Defining known variables</span></span>
+<span><span class="va">C</span> <span class="op">&lt;-</span> <span class="fl">18888.1</span>   <span class="co"># Consumption</span></span>
+<span><span class="va">I</span> <span class="op">&lt;-</span> <span class="fl">4975.0</span>    <span class="co"># Investment</span></span>
+<span><span class="va">G</span> <span class="op">&lt;-</span> <span class="fl">4856.8</span>    <span class="co"># Government spending</span></span>
+<span><span class="va">EX</span> <span class="op">&lt;-</span> <span class="fl">3054.0</span>   <span class="co"># Exports</span></span>
+<span><span class="va">IM</span> <span class="op">&lt;-</span> <span class="fl">3835.1</span>   <span class="co"># Imports</span></span>
+<span></span>
+<span><span class="co"># Calculating GDP</span></span>
+<span><span class="va">GDP</span> <span class="op">&lt;-</span> <span class="va">C</span> <span class="op">+</span> <span class="va">I</span> <span class="op">+</span> <span class="va">G</span> <span class="op">+</span> <span class="op">(</span><span class="va">EX</span> <span class="op">-</span> <span class="va">IM</span><span class="op">)</span></span>
+<span><span class="va">GDP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 27938.8</code></pre>
+</div>
+</div>
+<p>We can similarly compute Net Exports (NX) and save the value to a newly created variable:</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">NX</span> <span class="op">&lt;-</span> <span class="va">EX</span> <span class="op">-</span> <span class="va">IM</span></span>
+<span><span class="va">NX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -781.1</code></pre>
+</div>
+</div>
+</section><section id="built-in-functions" class="level3" data-number="2.3.3"><h3 data-number="2.3.3" class="anchored" data-anchor-id="built-in-functions">
+<span class="header-section-number">2.3.3</span> Built-in functions</h3>
+<p>In economics, we often want to convert a variable to its natural logarithm. Even before installing any additional package, base R has many built-in mathematical functions, including the natural logarithm is computed using the <code><a href="https://rdrr.io/r/base/Log.html">log()</a></code> function. For example, to compute the natural logarithm of GDP and assign the value to a new variable <code>lnGDP</code> we can type:</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lnGDP</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">GDP</span><span class="op">)</span></span>
+<span><span class="va">lnGDP</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10.23777</code></pre>
+</div>
+</div>
+<p>Among the many useful functions built-in base R we have:</p>
+<ul>
+<li>
+<code>max</code> and <code>min</code>, to find the maximum and minimum of a set of numbers</li>
+<li>
+<code><a href="https://rdrr.io/r/base/Log.html">exp()</a></code>, the exponential function</li>
+<li>
+<code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code>, the square root</li>
+<li>
+<code><a href="https://rdrr.io/r/base/MathFun.html">abs()</a></code>, the absolute value</li>
+<li>
+<code><a href="https://rdrr.io/r/base/Log.html">log10()</a></code> and <code><a href="https://rdrr.io/r/base/Log.html">log2()</a></code>, respectively the logarithm to base 10 and 2</li>
+<li>
+<code><a href="https://rdrr.io/r/base/Trig.html">cos()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">sin()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">tan()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">acos()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">asin()</a></code>, <code><a href="https://rdrr.io/r/base/Trig.html">atan()</a></code>, the trigonometric functions and their inverses</li>
+</ul>
+<p>Sometimes you might not remember the arguments that a function requires, or some detail about its mechanics. In such cases you can type (in the console or in a script) <code>help(function_name)</code> or <code>?function_name</code> and press <code>Enter</code>. This will open the help page for the function in the <code>Help</code> tab of RStudio, which will include a description of the function, its arguments, references and some practical examples of usage.</p>
+<p>For example, we you can type <code><a href="https://rdrr.io/r/base/Log.html">?log</a></code> and press <code>Enter</code> to see the help page for the <code><a href="https://rdrr.io/r/base/Log.html">log()</a></code> function.</p>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="op">?</span><span class="va">log</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As you can see in the <code>Usage</code> section og the help page, <code><a href="https://rdrr.io/r/base/Log.html">log()</a></code> takes two arguments: <code>x</code> and <code>base</code>. The <code>x</code> argument is the number for which you want to compute the logarithm, and the <code>base</code> argument is the base of the logarithm. The expression <code>base = exp(1)</code> means that if no <code>base</code> argument is specified by default <code>exp(1)</code> is used as base (i.e.&nbsp;the natural logarithm is computed). It is quite common for functions to have one or a few required arguments and many optional arguments for which a default value may be pre-specified if you do not explicitly state a different one.</p>
+<p>Until now, we have printed the value of a variable by simply typing its name. However, we can also use the <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> function to print the value of a variable. For example, to print the value of <code>lnGDP</code> we can type:</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">lnGDP</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10.23777</code></pre>
+</div>
+</div>
+<p>The <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> function allows us to do more complicated things, for example to print a message along with the value of a variable. Let’s say that we want to print the message “The natural logarithm of GDP is:” followed by the value of <code>lnGDP</code>, so that the user can better understand what the value refers to, we can type:</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The natural logarithm of GDP is:"</span>, <span class="va">lnGDP</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The natural logarithm of GDP is: 10.2377716827118"</code></pre>
+</div>
+</div>
+<p><code>paste</code> is another built-in function that allows us to concatenate <em>strings</em> of text. In the example above we first concatenated the string <em>“The natural logarithm of GDP is:”</em> with the value of the variable <code>lnGDP</code> to create a single string. Then, the function <code><a href="https://rdrr.io/r/base/print.html">print()</a></code> printed this concatenated string in the console.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Single and double quotes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Differently from other programming languages, in R you can use either single quotes <code>'</code> or double quotes <code>"</code> interchangeably to define a string of text. In other words <code>print("Hello")</code> and <code>print('Hello')</code> are equivalent.</p>
+<p>The R documentation suggests that double quotes are preferred over single quotes, some programmers prefer to use double quotes for character strings and single quotes for other purposes, and can feel quite strongly about these rules. Ultimately, however, this is a matter of personal style and you can choose the one you prefer.</p>
+<p>No matter your choice, it is important to be consistent in your use of single and double quotes throughout your code, as consistency in style improves readability and intelligibility of your work.</p>
+</div>
+</div>
+</section><section id="if-statements" class="level3" data-number="2.3.4"><h3 data-number="2.3.4" class="anchored" data-anchor-id="if-statements">
+<span class="header-section-number">2.3.4</span> if statements</h3>
+<p>If statements are use to execute some code only if a certain condition is met. The syntax of the if statement is <code>if (condition) { code to be executed }</code>.</p>
+<p>Imagine that we are interested in printing to the console the value of <code>lnGDP</code> only if it is greater than 10. We can use an if statement to do this:</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="va">lnGDP</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The natural logarithm of GDP is larger than 10, and more precisely it is:"</span>, <span class="va">lnGDP</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The natural logarithm of GDP is larger than 10, and more precisely it is: 10.2377716827118"</code></pre>
+</div>
+</div>
+<p>We can also add an <code>else</code> statement to execute some code if the condition is <strong>not</strong> met. The syntax of the if-else statement is then <code>if (condition) { code to be executed if the condition is met } else { code to be executed if the condition is not met }</code>. To test how this works, let’s change the value of <code>lnGDP</code> to 9 and run the following code:</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">lnGDP</span> <span class="op">&lt;-</span> <span class="fl">9</span></span>
+<span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">lnGDP</span> <span class="op">&gt;</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The natural logarithm of GDP is larger than 10, and more precisely it is:"</span>, <span class="va">lnGDP</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The natural logarithm of GDP is not larger than 10, and more precisely it is:"</span>, <span class="va">lnGDP</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The natural logarithm of GDP is not larger than 10, and more precisely it is: 9"</code></pre>
+</div>
+</div>
+</section><section id="loops" class="level3" data-number="2.3.5"><h3 data-number="2.3.5" class="anchored" data-anchor-id="loops">
+<span class="header-section-number">2.3.5</span> Loops</h3>
+<p>In economics, we often want to solve a model by iterating over a set of equations. For example, consider the following simple Keynesian model:</p>
+<p>RETEST</p>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#Define exogenous parameters</span></span>
+<span><span class="va">c0</span><span class="op">=</span><span class="fl">2</span></span>
+<span><span class="va">c1</span><span class="op">=</span><span class="fl">0.8</span></span>
+<span><span class="va">I</span><span class="op">=</span><span class="fl">10</span></span>
+<span></span>
+<span><span class="co">#set initial values for two endogenous variable</span></span>
+<span><span class="va">Y</span><span class="op">=</span><span class="va">C</span><span class="op">=</span><span class="fl">1</span></span>
+<span><span class="co">#Use a for loop to solve it</span></span>
+<span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">20</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">Y</span> <span class="op">&lt;-</span> <span class="va">C</span><span class="op">+</span><span class="va">I</span></span>
+<span>  <span class="va">C</span> <span class="op">&lt;-</span> <span class="va">c0</span> <span class="op">+</span> <span class="va">c1</span><span class="op">*</span><span class="va">Y</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">C</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11
+[1] 10.8
+[1] 20.8
+[1] 18.64
+[1] 28.64
+[1] 24.912
+[1] 34.912
+[1] 29.9296
+[1] 39.9296
+[1] 33.94368
+[1] 43.94368
+[1] 37.15494
+[1] 47.15494
+[1] 39.72396
+[1] 49.72396
+[1] 41.77916
+[1] 51.77916
+[1] 43.42333
+[1] 53.42333
+[1] 44.73867
+[1] 54.73867
+[1] 45.79093
+[1] 55.79093
+[1] 46.63275
+[1] 56.63275
+[1] 47.3062
+[1] 57.3062
+[1] 47.84496
+[1] 57.84496
+[1] 48.27597
+[1] 58.27597
+[1] 48.62077
+[1] 58.62077
+[1] 48.89662
+[1] 58.89662
+[1] 49.11729
+[1] 59.11729
+[1] 49.29384
+[1] 59.29384
+[1] 49.43507</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#########################   YOUR FIRST R SCRIPT  #############################</span></span>
+<span><span class="co"># Note: these lines start with a # and hence are not executed</span></span>
+<span></span>
+<span><span class="co"># Defining some variables</span></span>
+<span><span class="va">s</span> <span class="op">=</span> <span class="fl">0.05</span></span>
+<span><span class="va">Y</span> <span class="op">=</span> <span class="fl">10</span></span>
+<span></span>
+<span><span class="co">#We can also assign several variables the same value at once</span></span>
+<span><span class="va">C</span> <span class="op">=</span> <span class="va">I</span> <span class="op">=</span> <span class="va">R</span> <span class="op">=</span> <span class="fl">2</span></span>
+<span></span>
+<span><span class="co">#For displaying them we simply call the name of the object and execute the relevant line</span></span>
+<span><span class="va">Y</span></span>
+<span><span class="va">C</span></span>
+<span></span>
+<span><span class="co">#We can define new variables using existing ones</span></span>
+<span><span class="va">W</span> <span class="op">=</span> <span class="va">Y</span> <span class="op">-</span> <span class="va">R</span></span>
+<span><span class="va">W</span></span>
+<span></span>
+<span><span class="co">#R has a vast amount of built in functions, for example</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">2</span>,<span class="fl">100</span>,<span class="op">-</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fl">9</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="op">-</span><span class="fl">13</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#you can find out more about these by using the help function, e.g.:?max()</span></span>
+<span></span>
+<span><span class="co">#How can you delete stuff? Use the remove function rm()</span></span>
+<span><span class="co">#for individual objects</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">Y</span><span class="op">)</span></span>
+<span><span class="co">#if you want to remove everything</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>all<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#You can also assign text (a string) to a variable</span></span>
+<span><span class="va">text1</span> <span class="op">=</span> <span class="st">'Reggaeton'</span></span>
+<span><span class="va">text2</span> <span class="op">=</span> <span class="st">"Bad Bunny"</span></span>
+<span><span class="co">#note "text" is the same as 'text' and a string can contain spaces</span></span>
+<span><span class="co">#You use the paste function to combine strings</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">text1</span>, <span class="va">text2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#R uses standard operators like +, -, *</span></span>
+<span><span class="co">#for exponents use ^</span></span>
+<span><span class="fl">3</span><span class="op">^</span><span class="fl">2</span></span>
+<span></span>
+<span></span>
+<span><span class="co">########################### if statements and loops ######################</span></span>
+<span></span>
+<span><span class="co">#sometimes we need to introduce if conditions into our code</span></span>
+<span><span class="co">#The syntax is</span></span>
+<span><span class="co">#if condition { do something }</span></span>
+<span><span class="va">a</span> <span class="op">=</span> <span class="fl">10</span></span>
+<span><span class="va">b</span> <span class="op">=</span> <span class="fl">13</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">b</span><span class="op">&gt;</span><span class="va">a</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"b is bigger"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="co">#we can also tell R what to do in case the condition is not fulfilled</span></span>
+<span><span class="va">b</span><span class="op">=</span><span class="fl">10</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="va">b</span><span class="op">&gt;</span><span class="va">a</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"b is bigger"</span><span class="op">)</span></span>
+<span><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="st">"b not bigger"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span></span>
+<span><span class="co">#Next we will look at loops which are a key tool to repeat tasks such as solving</span></span>
+<span><span class="co">#a theoretical model again and again to find its equilibrium.</span></span>
+<span><span class="co">#The basic structure is:</span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="co">#Let's use it to solve a simple Keynesian cross model of the form</span></span>
+<span><span class="co">#Y=C+I</span></span>
+<span><span class="co">#C=c0+c1Y</span></span>
+<span><span class="co">#Define exogenous parameters</span></span>
+<span><span class="va">c0</span><span class="op">=</span><span class="fl">2</span></span>
+<span><span class="va">c1</span><span class="op">=</span><span class="fl">0.8</span></span>
+<span><span class="va">I</span><span class="op">=</span><span class="fl">10</span></span>
+<span><span class="co">#set initial values for two endogenous variable</span></span>
+<span><span class="va">Y</span><span class="op">=</span><span class="va">C</span><span class="op">=</span><span class="fl">1</span></span>
+<span><span class="co">#Use a for loop to solve it</span></span>
+<span><span class="va">C</span></span>
+<span><span class="va">Y</span></span>
+<span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">100</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">Y</span> <span class="op">=</span> <span class="va">C</span><span class="op">+</span><span class="va">I</span></span>
+<span>  <span class="va">C</span> <span class="op">=</span> <span class="va">c0</span><span class="op">+</span><span class="va">c1</span><span class="op">*</span><span class="va">Y</span></span>
+<span><span class="op">}</span></span>
+<span><span class="va">C</span></span>
+<span><span class="va">Y</span></span>
+<span><span class="co">#solution is Y=(I+c0)/(1-c1)=60</span></span>
+<span></span>
+<span><span class="co">#What is special about this loop is that it uses the values from the previous iteration</span></span>
+<span><span class="co">#to define the values of the next, because it starts with assigning a value to Y</span></span>
+<span><span class="co">#and then uses that value to assign a new value to C and in the next iteration it</span></span>
+<span><span class="co">#uses this new value for C to define a new value for Y etc.</span></span>
+<span></span>
+<span></span>
+<span><span class="co">########################### Data structures ##########################</span></span>
+<span><span class="co">#In most applications we produce outputs which do not consist of a single number.</span></span>
+<span><span class="co">#Often we have an entire stream of results, or we want to analyse data and have to store larger amounts of data</span></span>
+<span><span class="co">#R has a variety of data structures for this purpose.</span></span>
+<span><span class="co">#let's clean up first</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span>all<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">####Vectors </span></span>
+<span><span class="co">#We can create an empty vector and fill it later (with results of our model for example)</span></span>
+<span><span class="va">vec1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html">vector</a></span><span class="op">(</span>length<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#we can define vectors explicitly using the c() function (c for column?)</span></span>
+<span><span class="va">vec2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span>
+<span><span class="va">vec3</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">7</span>,<span class="fl">8</span><span class="op">)</span></span>
+<span><span class="co">#we can also use the sequence operator</span></span>
+<span><span class="va">vec4</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
+<span><span class="co">#and we can define the step size</span></span>
+<span><span class="va">vec5</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">0.1</span><span class="op">)</span></span>
+<span><span class="va">vec5</span></span>
+<span><span class="co">#we can call specific entries using square brackets</span></span>
+<span><span class="va">vec5</span><span class="op">[</span><span class="fl">4</span><span class="op">]</span></span>
+<span><span class="co">#if we want to access more elements at once</span></span>
+<span><span class="va">vec5</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">4</span>,<span class="fl">1</span><span class="op">)</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co">####Matrices</span></span>
+<span><span class="co">#define a matrix: 3 rows and 2 columns, all elements equal to 0</span></span>
+<span><span class="va">mat1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fl">0</span>, nrow<span class="op">=</span><span class="fl">3</span>, ncol<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">mat1</span></span>
+<span><span class="co">#we can also fill it with specific values</span></span>
+<span><span class="va">mat2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">3</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">mat2</span></span>
+<span><span class="co">#access specific elements (columns,rows)</span></span>
+<span><span class="va">mat2</span><span class="op">[</span><span class="fl">3</span>,<span class="fl">1</span><span class="op">]</span></span>
+<span><span class="co">#access entire rows or columns</span></span>
+<span><span class="va">mat2</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span></span>
+<span><span class="va">mat2</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span>
+<span><span class="co">#access sub matrices</span></span>
+<span><span class="va">mat2</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>,<span class="op">]</span></span>
+<span><span class="co">## Combine two column vectors in a matrix</span></span>
+<span><span class="va">mat3</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">vec1</span>, <span class="va">vec2</span><span class="op">)</span></span>
+<span><span class="va">mat3</span></span>
+<span><span class="co">## Combine two row vectors in a matrix</span></span>
+<span><span class="va">mat4</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span><span class="op">(</span><span class="va">vec1</span>, <span class="va">vec2</span><span class="op">)</span></span>
+<span><span class="va">mat4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-grolemund" class="csl-entry" role="listitem">
+Grolemund, Garrett. 2014. <em>Hands-on Programming with r</em>. O’Reilly Media, Inc. <a href="https://rstudio-education.github.io/hopr/">https://rstudio-education.github.io/hopr/</a>.
+</div>
 <div id="ref-wickham2023" class="csl-entry" role="listitem">
 Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <em>R for Data Science</em>. 2nd ed. O’Reilly Media, Inc. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.
 </div>
 </div>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -585,9 +1018,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./intro.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
