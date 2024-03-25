@@ -76,32 +76,7 @@ cat("Final results: \n", "Y =", Y, "C =", C, "\n")
 
 ```
 
-### Variable types
-
-In our previous coding examples we have been defining and using several variables, simply assigning values to them without giving it much thought. If you have not cleared your workspace, you should still be able to see some of them in the `Environment` tab of RStudio: the variable `Y` we used to store the value of investment still holds the value 10, and the variable `C` we used to store the value of consumption still holds the final result of the loop.
-
-You might notice that the variable `i` we used to iterate over the loop is still there as well, but its value is reported as `60L`. We never explicitly defined `i` using an assignment operator `<-`: `i` is a special type of variable called a `loop variable`. Loop variables are automatically created by R to store the value of the current iteration of the loop (i.e. act as a counter) and since R knows that all they will do is count the iteration they are automatically assigned the type of `integer`; after all, we know there will be a first iteration of the loop and a second iteration of the loop, but no 1.5-th iteration of the loop.
-
-We can explicitly check the type of a variable using the `class()` or `typeof()` functions. Let's see what R answer when we ask about the types of the variables `I` and `i`:
-
-```{{r}}
-class(i)
-class(I)
-```
-
-As expected, `i` is of type `integer` and `I` is of type `numeric`.
-
-In R, variables can be of different types. The most common types are:
-
-```         
-- **Numeric**: for real numbers
-```
-
--   **Integer**: for integer numbers
--   **Character**: for strings of text
--   **Logical**: for logical values (TRUE or FALSE)
-
-When we define a variable, R automatically assigns a type to it. For example, when we defined the variable `lnGDP` as `lnGDP <- log(1000)`, R assigned the type `numeric` to `lnGDP` because the value of `log(1000)` is a real number.
+...
 
 ```{r}
 

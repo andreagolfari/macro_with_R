@@ -182,12 +182,39 @@ R will give you information about the versions of the packages that were loaded 
 
 If you check the `Packages` tab in RStudio, you will see that the `tidyverse` package is now loaded, as indicated by the checkmark next to its name. It is a good idea to put the loading of the packages that we know we will want to use at the top of a script, so that anybody running the code (including our future selves) knows which packages are required.
 
+::: callout-note
+Conflicts are nothing too alarming, what R is telling you is that there are functions with the same name in different packages, and that you should be careful when using them. For example, above you care read that the `filter()` function is included in both the `dplyr` package (part of the `tidyverse`) and the `stats` package (part of base R). Since you have loaded the `tidyverse` package after the `stats` package, the `filter()` function from `dplyr` will mask the `filter()` function from `stats`. This is not a problem, but you should be aware of it.
 
+Most R programmers will tell you that the most correct way to handle this situation is to use the `::` operator to specify from which package you want to use a function. For example, to use the `filter()` function from the `dplyr` package you can type `dplyr::filter()`. This way you are explicitly telling R that you want to use the `filter()` function from the `dplyr` package. When instead you desire to use the `filter()` function from the `stats` package you will type `stats::filter()`, thus resolving the ambiguity.
 
+But, since most programmers (including me) are lazy, don't be surprised if you read (most) code that doesn't use the `::` operator. It is not a big deal as long as you are fairly certain that the one version of the function that you will routinely access if actually the one *masking* the alternative *being masked*.
+:::
 
+## Managing the Environment
 
+At this point the `Environment` tab of your RStudio is probably littered with variables that you have created during the course of this lesson. This is not a problem, but it can become confusing if you have many variables with similar names or if you are working on a long script.
 
+You can remove a variable from the environment using the `rm()` function. For example, to remove the variable `lnGDP` you can type:
 
+```{r}
+rm(lnGDP)
+```
 
+If you check the `Environment` tab in RStudio you will see that the variable `lnGDP` is no longer listed. You can also remove multiple variables at once:
 
+```{r}
+rm(GDP, x, G)
+```
 
+Sometimes we really want to clean up things and remove all the variables from the environment to start over. 
+You can do this using the `rm(list = ls())` command. Right now this syntax will probably look obscure. That's fine! You do not really need to understand the detals now, but if you are curious, the `ls()` function lists all the variables in the environment, and the `list =` argument of the `rm()` function tells R to remove all the variables listed by `ls()`.
+
+Let's try it now:
+
+```{r}
+rm(list = ls())
+```
+
+And... it's all gone! The `Environment` tab is now empty. When you are testing code or writing a script, it is a good idea to start with a clean environment, so that you can be sure that the results you are getting are not influenced by variables that you have created in previous runs. This is particularly important when you are attempting many different things and sometimes overwrite variables with the same name. It's easy to get confused and pretty soon unexpected results show up and they are hard to debug.
+
+Now you should spend a few minutes checking all the code you wrote, writing comments so that you can understand what it does when you go back to it, and then save it as a `.R` script. You can save the script by clicking on the `File` menu and selecting `Save As...`. Give your script a name and save it in a folder where you can easily find it.

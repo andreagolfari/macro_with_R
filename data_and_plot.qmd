@@ -1,0 +1,149 @@
+
+# Data and Plotting
+
+## Accessing Data
+
+One task for which R will makes us extraordinarily more efficient is accessing and handling data. No matter what we are trying to do in Economics and Finance, if what we are doing is empirical in nature our first step will most likely be to get some data.
+
+For this course we will find ourselves often needing to pull data from the St. Louis's FED Economic Data (FRED) website [https://fred.stlouisfed.org/](https://fred.stlouisfed.org/). There exists in R a package called `quantmod` that allows us to easily pull data from many sources, including the FRED database.
+
+To get started, we will need to install and load the `quantmod` package. We can do this by running the following code:
+
+```{r}
+#install.packages("quantmod")
+library(quantmod)
+```
+
+One of the "workhorses" of the `quantmod` package is the `getSymbols()` function, which allows us to pull data from (a variety of sources) among others) FRED. The `getSymbols()` function has a few arguments that we will need to specify in order to pull exactly the data we want:
+
+* The first argument is the specific FRED code for the data we want to pull. Of course, right now you do not know this code, but you can find it by doing searches on the FRED database and then saving a list of the most useful ones in your code. You find these identifiers in parenthesis next to the name of the data series in the FRED database.
+
+* The second argument `src =` is the source of the data. In this case, we will be pulling data from FRED, so we will set this argument to "FRED".
+
+
+For example, let's say that we want to plot the Real Gross Domestic Product of the United States and have a look at how it behaved in the last few years, since the data presented in Williamson's textbook stopped in 2015. We can check on FRED and see that there is a series called "Real Gross Domestic Product" (Quarterly frequency, Seasonally Adjusted) with the code "GDPC1". We can pull this data and plot it by running the following code:
+
+```{r}
+getSymbols("GDPC1", src = "FRED")
+```
+
+In the `Environment` tab you should now see a new `xts` object called `GDPC1`. An `xts` object is a time series data structure, but for now you should not worry about what that means.
+We can inspect its content simply by typing its name in the console:
+
+```{r}
+GDPC1
+```
+As you see, it is a table with two columns: one (the index) is a date and the other is the value of the variable we requested (in this case Real GDP). Notice that by default we are shown the head and the tail of the table (the earliest and latest dates) only, to avoid flooding the console with data.
+
+This seems the right moment to introduce the `head()` and `tail()` functions. Sometimes, we want to have a look at a specific amount of rows at the beginning or end of a table. For example, using the command `head(GDPC1, n = 10)` will show us the *first* 10 rows of the table. Similarly, `tail(GDPC1, n = 10)` will show us the *last* 10 rows of the table. If you omit the second argument, by default R will show you the first or last 6 rows of the table. Note that explicitly typing `n = ` is optional, you could simply type `head(GDPC1, 10)` and obtain the same result; sometimes it is useful to be explicit, though, especially when you are learning new functions or when you are sharing your code with others.
+
+
+```{r}
+head(GDPC1, n = 10)
+tail(GDPC1, n = 10)
+```
+
+Another way to inspect the data is by using the `View` (notice the capital *V*) function, which will open a new tab with the **entire** table in a more readable and scrollable format:
+
+```{r}
+View(GDPC1)
+```
+
+In our `xts` object the date is the index of the table. This means that we can easily access the data for a specific date by using the date, for example to ask R to show us the Real GDP for the reading of 1st of January 2015 we can run the following code:
+
+```{r}
+GDPC1["2015-01-01"]
+```
+
+## Plotting Data
+
+We wanted to create plots of the data to extend the graphs presented in the textbook, though, right? This is one task where R really shines. In a second you will see how much faster we can create a usable plot of an economic variable compared to what it would take if we, for example, had to download the data manually, import it to a spreadsheet like Excel and then configure the plot by a point-and-click interface.
+
+There are many, many different packages in R that allow us to plot data, but we will start with the `plot()` function, which is a base R function that is very easy to use. *This* simple, in fact:
+
+```{r}
+plot(GDPC1)
+```
+Boom, done. This is quite amazing: R somehow understood that the index of the time series object (the dates) should be put on the x-axis and that the values of the variable should be put on the y-axis. It also understood that we wanted to plot the entire series, not just a part of it. and it understood that it should connect the various data points with a continuous line (rather than just plotting individual dots).
+
+This is a very simple plot, but it is already quite informative. We can however give to the `plot()` function a few arguments to make the plot *more* informative, polished, and visually appealing:
+
+* The first argument is the data we want to plot. In this case we will pass the `GDPC1` object (just like we did above).
+* The second argument `main =` is the title of the plot; we will set it to "U.S. Real GDP".
+* The third argument `ylab =` is the label of the y-axis; we will set it to "Billions of USD".
+* The fourth argument `xlab =` is the label of the x-axis; we will set it to "Time".
+
+```{r}
+plot(GDPC1, main = "U.S. Real GDP", ylab = "Billions of USD", xlab = "Time")
+```
+That's quite nice. If you now look at the `Plots` tab you will see that you have an `Export` button that allows you to save the plot in a variety of formats (e.g. PNG, PDF, etc.), which is very useful if you want to include the plot in a report or presentation.
+
+::: callout-note
+In R white spaces are irrelevant, so sometimes it might be useful to break a long line of code into multiple lines to make it more readable. 
+You could have written the `plot()` function above as follows:
+
+```{r}
+#| eval=FALSE
+plot(GDPC1, 
+     main = "U.S. Real GDP", 
+     ylab = "Billions of USD", 
+     xlab = "Time")
+```
+:::
+
+## Getting More Data
+
+In the past few years (post-pandemic) inflation has returned to be a very important topic of discussion among economists and policymakers. It's quite a shame that your (excellent) textbook could not present graphs that extend beyond 2018, but we can easily get more recent data and create our own plots.
+
+On FRED you can find the `CPALTT01USM657N` series, which is the monthly, non-seasonally adjusted rate of change of the Consumer Price Index (CPI) in the United States. Let's download it:
+
+```{r}
+getSymbols("CPALTT01USM657N", src = "FRED")
+```
+All right, we have the data. However, it has quite a cumbersome name. I really do not feel like having to type "CPALTT01USM657N" each and every time (remember, I am lazy) so let's rename it to something more manageable, and remove the original object to avoid confusion:
+
+
+```{r}
+inflation <- CPALTT01USM657N
+rm(CPALTT01USM657N)
+```
+
+Much better. Note that you could have done all this in one step by assigning the output of the `getSymbols()` function to an object with a different name (`inflation` in our case), like this:
+
+```{r}
+inflation <- getSymbols("CPALTT01USM657N", src = "FRED", auto.assign = FALSE)
+```
+
+The `auto.assign` argument basically controls whether or not the output of `getSymbols` should be assigned automatically to an object of the same name and put in the environment. By default it is set to `TRUE`, but in this case (since I wanted to create a different object) I have to change it to `FALSE`.
+
+Now, let's plot it:
+
+```{r}
+plot(inflation, main = "U.S. Inflation Rate", ylab = "%", xlab = "Time")
+```
+
+Hum. This looks weird. The values are all over the place and inflation never seems to go that much above 1\%. This is because the data is the rate of change of the CPI relative to the previous period, and the data is *monthly*. We should probably annualize it to make it more comparable to the GDP data. We can do this by multiplying the monthly inflation rate by 12:
+
+```{r}
+inflation <- inflation * 12
+```
+
+```{r}
+plot(inflation, main = "U.S. Inflation Rate", ylab = "%", xlab = "Time")
+```
+
+That's better, but you might notice that the time series is still very volatile. This is because multiplying the monthly data by 12 is quite a crude way to approximate an annual inflation rate. What we are doing is actually asking what the annual inflation rate *would have been* if it had been constant for 12 months at the rate observed in the last month. If anything this will amplify visual effect of monthly spikes or falls.
+
+We will see the correct way to address this issue in the future, but for now let's see if things get better simply by moving to quarterly data 
+On FRED we can get the quarterly rate of change of the CPI with the `CPALTT01USQ657N` series. Let's download it, annualize it and plot it:
+
+
+```{r}
+getSymbols('CPALTT01USQ657N', src = 'FRED')
+inflation <- CPALTT01USQ657N * 4
+plot(inflation, main = 'U.S. Inflation Rate',
+     ylab = '%',
+     xlab = 'Time')
+```
+
+ 
