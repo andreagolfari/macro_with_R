@@ -1,9 +1,55 @@
 # Introduction
 
-This is a book created from markdown and executable code.
 
-See @knuth84 for additional discussion of literate programming.
+## R and RStudio
 
-```{r}
-1 + 1
-```
+R is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story [here](https://www.r-project.org/about.html).
+
+One of the advantages of R is that it is historically the *lingua franca* of statistics, and is used by statisticians and data scientists worldwide; this means that it is often the first language used to implement new econometric methods and statistical models. In addition, its large user base means that it is very easy to find help and support on the web.
+
+R is a modular language, and its functionality can be extended by installing specific packages (libraries) for a wide range of applications including econometrics, finance, machine learning, data visualization, and many more. There are currently over 15,000 packages available on the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
+
+RStudio is an integrated development environment (IDE) for R. It is highly customizable and includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. While it is theoretically not necessary to use RStudio to run R code, it is highly recommended as it makes the coding experience immensely more pleasant and efficient.
+
+To be able to manipulate the codes on this platform on your own machine, you first need to download and install [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/) (in this order). If necessary you can find detailed instructions on how to do this [here](https://rstudio-education.github.io/hopr/starting.html).
+
+
+## Learning Resources
+
+Because the R programming language is so versatile, there are often many ways to achieve something. This is especially true when you consider that for many applications there exist multiple competing packages, each with its strengths and weaknesses. Luckily, there is a large community of users and developers that are happy to share their knowledge and experience, and a plethora of great learning resources are available for free on the web.
+
+Whenever you are having issues in your R programming, remember that chances are many users experienced the same problem before you, and that you can find the solution by searching on the web. No matter how experienced you are, you will always need to look up the documentation of a function or package, or search for a solution to a specific problem. Nobody remembers the exact syntax of *all* functions and packages: there is no shame in this and accessing documentation and/or looking up resources online is (possibly the most important) part of the learning process.
+
+Here are some useful resources I find myself constantly accessing and referring to while programming in R:
+
+-   **Online Tutorials** Many learning tutorials are freely available on the web, for example
+    1.  [RStudio Education](https://education.rstudio.com/learn/beginner/)
+    2.  [W3Schools R Tutorial](https://www.w3schools.com/r/default.asp)
+    3.  [Swirl](https://swirlstats.com/) is an R package that teaches you R programming and data science functions, right inside the R console!
+
+\vspace{2em}
+
+-   **Cheat Sheets:** RStudio developer Posit publishes a [multitude of cheat sheets](https://posit.co/resources/cheatsheets/) for the most commonly used functions in R as well as in a variety of packages.\
+    In particular, among them:
+    1.  [**RStudio IDE Cheatsheet**](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
+    2.  [**The Base R Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf)
+    3.  [**dplyr Cheatsheet**](https://rstudio.github.io/cheatsheets/data-transformation.pdf) for data transformation and manipulation
+    4.  [**ggplot2 Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf) for data visualization
+
+\vspace{2em}
+
+-   **Online Communities**
+    1.  [**Stack Overflow**](https://stackoverflow.com/) is a question and answer site for professional and enthusiast programmers. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://stackoverflow.com/help/how-to-ask). But in truth, 99.99% of the times just doing a search on the site will lead you to a question that has already been asked and answered.
+    2.  [**RStudio Community**](https://community.rstudio.com/) is a forum for RStudio users. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://community.rstudio.com/t/faq-how-to-do-reproducible-minimal-examples/1060).
+    3.  [**Econometrics Stack Exchange**](https://economics.stackexchange.com/) is a question and answer site for those who study, teach, research and apply economics and econometrics.
+    4.  [**R-bloggers**](https://www.r-bloggers.com/) is a blog aggregator for content contributed by bloggers who write about R. It is a great place to find tutorials and examples of R code.
+
+\vspace{2em}
+
+-   **Online Books:**
+    1.  [**R for Data Science**](https://r4ds.had.co.nz/) by @wickham2023:\
+        This is possibly the best resource for learning R programming for data analysis applications. Hadley Wickham is one of the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language. This is a good reference especially for topics related to data cleaning and graphing. Note: it goes **way** beyond what is needed for this course.
+    2.  [**Hands-On Programming with R**](https://rstudio-education.github.io/hopr/) by @grolemund.\
+        This book is a another great resource for learning R programming from scratch.
+    3.  [**Advanced R**](https://adv-r.hadley.nz/) by @wickham2023:\
+        This book is for those who want to understand the inner workings of R and how to write efficient code. Note: you do **not** need this material for this course, but if the R programming bug bites you, this is a great resource.

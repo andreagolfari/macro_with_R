@@ -9,6 +9,7 @@ book:
     - index.qmd
     - intro.qmd
     - getting_started.qmd
+    - working_with_models.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -8,55 +8,6 @@ format:
 editor: visual
 ---
 
-## R and RStudio
-
-R is a programming language that is particularly suited for statistical computing and graphics. It is freely available under GNU General Public licence for Windows, Linux and Mac operating systems, and is supported by a huge community of users and developers. You can read more on its interesting story [here](https://www.r-project.org/about.html).
-
-One of the advantages of R is that it is historically the *lingua franca* of statistics, and is used by statisticians and data scientists worldwide; this means that it is often the first language used to implement new econometric methods and statistical models. In addition, its large user base means that it is very easy to find help and support on the web.
-
-R is a modular language, and its functionality can be extended by installing specific packages (libraries) for a wide range of applications including econometrics, finance, machine learning, data visualization, and many more. There are currently over 15,000 packages available on the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/).
-
-RStudio is an integrated development environment (IDE) for R. It is highly customizable and includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. While it is theoretically not necessary to use RStudio to run R code, it is highly recommended as it makes the coding experience immensely more pleasant and efficient.
-
-To be able to manipulate the codes on this platform on your own machine, you first need to download and install [R](https://cran.r-project.org/) and [RStudio](https://posit.co/products/open-source/rstudio/) (in this order). If necessary you can find detailed instructions on how to do this [here](https://rstudio-education.github.io/hopr/starting.html).
-
-## Learning Resources
-
-Because the R programming language is so versatile, there are often many ways to achieve something. This is especially true when you consider that for many applications there exist multiple competing packages, each with its strengths and weaknesses. Luckily, there is a large community of users and developers that are happy to share their knowledge and experience, and a plethora of great learning resources are available for free on the web.
-
-Whenever you are having issues in your R programming, remember that chances are many users experienced the same problem before you, and that you can find the solution by searching on the web. No matter how experienced you are, you will always need to look up the documentation of a function or package, or search for a solution to a specific problem. Nobody remembers the exact syntax of *all* functions and packages: there is no shame in this and accessing documentation and/or looking up resources online is (possibly the most important) part of the learning process.
-
-Here are some useful resources I find myself constantly accessing and referring to while programming in R:
-
--   **Online Tutorials** Many learning tutorials are freely available on the web, for example
-    1.  [RStudio Education](https://education.rstudio.com/learn/beginner/)
-    2.  [W3Schools R Tutorial](https://www.w3schools.com/r/default.asp)
-    3.  [Swirl](https://swirlstats.com/) is an R package that teaches you R programming and data science functions, right inside the R console!
-
-\vspace{2em}
-
--   **Cheat Sheets:** RStudio developer Posit publishes a [multitude of cheat sheets](https://posit.co/resources/cheatsheets/) for the most commonly used functions in R as well as in a variety of packages.\
-    In particular, among them:
-    1.  [**RStudio IDE Cheatsheet**](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
-    2.  [**The Base R Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf)
-    3.  [**dplyr Cheatsheet**](https://rstudio.github.io/cheatsheets/data-transformation.pdf) for data transformation and manipulation
-    4.  [**ggplot2 Cheatsheet**](https://rstudio.github.io/cheatsheets/base-r.pdf) for data visualization
-
-\vspace{2em}
-
--   **Online Communities**
-    1.  [**Stack Overflow**](https://stackoverflow.com/) is a question and answer site for professional and enthusiast programmers. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://stackoverflow.com/help/how-to-ask). But in truth, 99.99% of the times just doing a search on the site will lead you to a question that has already been asked and answered.
-    2.  [**RStudio Community**](https://community.rstudio.com/) is a forum for RStudio users. It is a great place to find answers to your questions. If you are new to the platform, you can find some useful tips on how to ask questions [here](https://community.rstudio.com/t/faq-how-to-do-reproducible-minimal-examples/1060).
-    3.  [**Econometrics Stack Exchange**](https://economics.stackexchange.com/) is a question and answer site for those who study, teach, research and apply economics and econometrics.
-    4.  [**R-bloggers**](https://www.r-bloggers.com/) is a blog aggregator for content contributed by bloggers who write about R. It is a great place to find tutorials and examples of R code.
-
-\vspace{2em}
-
--   **Online Books:**
-    1.  [**R for Data Science**](https://r4ds.had.co.nz/) by @wickham2023:\
-        This is possibly the best resources for learning R programming for data analysis applications. Hadley Wickham is one of the most influential R developers in the world and his tidyverse packages have truly re-shaped the syntax of the language.
-    2.  [**Hands-On Programming with R**](https://rstudio-education.github.io/hopr/) by @grolemund.
-
 ## R Basics
 
 ### R as a calculator
@@ -78,11 +29,18 @@ The usual arithmetic operators are available in R:
 -   `^` for exponentiation
 -   `%%` for modulo (remainder of division).
 
-Of course, you can also use parentheses to group operations.
+Of course, you can also use parentheses to group operations...
 
 ```{r}
 2*(100/4)+(2^3)
 ```
+
+...or
+
+```{r}
+2*100/((4+2)^3)
+```
+Note that we did not use`[]` or `{}` to group operations like you (maybe) would with pen and paper. In R, parentheses `()` are used to group operations while `[]` and `{}` are use for other various different things.
 
 You can also assign values to variables and use them later in your calculations. In R we use the *assignment operator* `<-` to assign values to variables. For example, typing `x <- 2` creates a variable `x` and assigns a value of 2 and pressing `Enter`. You should see nothing printed in the console; however, in the `Environment` tab of RStudio you should see the variable `x` has been created and now carries the value of 2.
 
@@ -168,7 +126,7 @@ For example, we you can type `?log` and press `Enter` to see the help page for t
 ?log
 ```
 
-As you can see in the `Usage` section og the help page, `log()` takes two arguments: `x` and `base`. The `x` argument is the number for which you want to compute the logarithm, and the `base` argument is the base of the logarithm. The expression `base = exp(1)` means that if no `base` argument is specified by default `exp(1)` is used as base (i.e. the natural logarithm is computed). It is quite common for functions to have one or a few required arguments and many optional arguments for which a default value may be pre-specified if you do not explicitly state a different one.
+As you can see in the `Usage` section of the help page, `log()` takes two arguments: `x` and `base`. The `x` argument is the number for which you want to compute the logarithm, and the `base` argument is the base of the logarithm. The expression `base = exp(1)` means that if no `base` argument is specified by default `exp(1)` is used as base (i.e. the natural logarithm is computed). It is quite common for functions to have one or a few required arguments and many optional arguments for which a default value may be pre-specified if you do not explicitly state a different one.
 
 Until now, we have printed the value of a variable by simply typing its name. However, we can also use the `print()` function to print the value of a variable. For example, to print the value of `lnGDP` we can type:
 
@@ -194,149 +152,42 @@ The R documentation suggests that double quotes are preferred over single quotes
 No matter your choice, it is important to be consistent in your use of single and double quotes throughout your code, as consistency in style improves readability and intelligibility of your work.
 :::
 
-### `if` statements
+## Packages and the tidyverse
 
-If statements are use to execute some code only if a certain condition is met. The syntax of the if statement is `if (condition) { code to be executed }`.
+As previously mentioned, R has a tremendously vast ecosystem of packages that can be used to perform a wide range of tasks. Each package gives access to a set of specific functions that extend the functionality of what we call base R. We will sometimes rely on some packages to do things like access public databases, manipulate this data, visualize it, or perform specific statistical analyses or model simulations.
 
-Imagine that we are interested in printing to the console the value of `lnGDP` only if it is greater than 10. We can use an if statement to do this:
+It all sounds quite daunting, but it *really* is not. The process of installing and loading a package is very simple. You only need to install each package once. After that, you can load it every time you start a new R session. 
 
-```{r}
-if (lnGDP > 10) {
-  print(paste("The natural logarithm of GDP is larger than 10, and more precisely it is:", lnGDP))
-}
-```
+To install a package you can use the `install.packages()` function, and put inside the parentheses the name of the package you want to install **with quotes**. The `install.packages()` function will download the package from the CRAN repository and install it on your computer. You only need to do this once for each package,as long as you continue working on the same computer.
 
-We can also add an `else` statement to execute some code if the condition is **not** met. The syntax of the if-else statement is then `if (condition) { code to be executed if the condition is met } else { code to be executed if the condition is not met }`. To test how this works, let's change the value of `lnGDP` to 9 and run the following code:
+One of the most popular and powerful packages is the `tidyverse`, which is in truth a collection of packages designed to work together. The tidyverse introduced in the R world a specific, consistent and coherent way of working with data, based on the principles of tidy data and the grammar of graphics. To most people the syntax of the tidyverse is more intuitive and easier to learn than base R, and we will use the `tidyverse` package quite routinely in this course. So it is a good idea to install it now.
+
+To install the `tidyverse` package you can type `install.packages("tidyverse")`. Let's see what happens!
 
 ```{r}
-lnGDP <- 9
-
-if (lnGDP > 10) {
-  print(paste("The natural logarithm of GDP is larger than 10, and more precisely it is:", lnGDP))
-} else {
-  print(paste("The natural logarithm of GDP is not larger than 10, and more precisely it is:", lnGDP))
-}
+# Note: commented out to avoid re-installing it
+# install.packages("tidyverse")
 ```
 
-### Loops
+Wow, that was a lot. If you read the console output, you'll see that R has been downloading and installing not only the packages included in the tidyverse, but also its *dependencies*. Dependencies are other packages that are required for the package you are installing to work properly. R took care of checking which of these dependencies were missing from your system and installed them as well. Neat!
 
-In economics, we often want to solve a model by iterating over a set of equations. For example, consider the following simple Keynesian model:
+If you check your `Packages` tab in RStudio, you will see that the `tidyverse` package is now included in the list, because it has been installed. However, to use the functions included in the `tidyverse` package you need to load it into your current R session. You can do this using the `library()` function, and putting the name of the package you want to load inside the parentheses **without quotes**. 
 
-$$Y = C+I$$ and $$C = \delta_{0} + \delta_{1} \times Y$$ 
-We will need to define the exogenous parameters $\delta_{0}$, $\delta_{1}$, and $I$, as well as an initial values for the endogenous variable $C$. Then, we can use a loop to solve the model iterating over the equations until the endogenous variable converges to a stable value.
+Let's load the `tidyverse` package now.
 
 ```{r}
-# Define exogenous parameters
-delta <- 5
-delta_1 <- 0.75
-I <-  10
-
-# Set an initial values for the endogenous variable C
-C <- 1
-
-# Use a for loop to solve the model
-
-for (i in 1:60){
-  Y <- C + I
-  C <- delta + delta_1*Y
-  cat("Iteration", i, ":", "Y =", Y, "C =", C, "\n")
-  }
+library(tidyverse)
 ```
+R will give you information about the versions of the packages that were loaded (which in case of `tidyverse` is quite a few).
 
-Note that we used the `cat()` function to print the results of each iteration in the console. The `cat()` function is similar to the `print()` function, but it is useful when you want to print several things in the same line. Here, at each iteration of the for loop we printed the string `"Iteration"`, the value of the variable `i`, the string `":"`, the string `"Y ="` the value of `Y`, the string `"C ="`, and the value of `C`, followed by the string `\n` instructing `R` to move to a new line.
-
-In the previous example we printed the result of each iteration to the console; this was useful to observe what the loop was doing and to check if the endogenous variable was converging to a stable value. However, in many cases you might only be interested in obtaining the final results.
-
-We ca easily achieve this moving the `cat()` function outside the loop, so that it is executed only once, after the loop has finished.  For example, we can modify the previous code as follows:
-
-```{r}
-# Define exogenous parameters
-delta <- 5
-delta_1 <- 0.75
-I <-  10
-
-# Set an initial values for the endogenous variable C
-C <- 1
-
-# Use a for loop to solve the model
-
-for (i in 1:60){
-  Y <- C + I
-  C <- delta + delta_1*Y
-}
-
-cat("Final results: \n", "Y =", Y, "C =", C, "\n")
-
-```
-
-### Variable types
-
-In our previous coding examples we have been defining and using several variables, simply assigning values to them without giving it much thought. If you have not cleared your workspace, you should still be able to see some of them in the `Environment` tab of RStudio: the variable `Y` we used to store the value of investment still holds the value 10, and the variable `C` we used to store the value of consumption still holds the final result of the loop. 
-
-You might notice that the variable `i` we used to iterate over the loop is still there as well, but its value is reported as `60L`. We never explicitly defined `i` using an assignment operator `<-`: `i` is a special type of variable called a `loop variable`. Loop variables are automatically created by R to store the value of the current iteration of the loop (i.e. act as a counter) and since R knows that all they will do is count the iteration they are automatically assigned the type of `integer`; after all, we know there will be a first iteration of the loop and a second iteration of the loop, but no 1.5-th iteration of the loop.
-
-We can explicitly check the type of a variable using the `class()` or `typeof()` functions. Let's see what R answer when we ask about the types of the variables `I` and `i`:
+If you check the `Packages` tab in RStudio, you will see that the `tidyverse` package is now loaded, as indicated by the checkmark next to its name. It is a good idea to put the loading of the packages that we know we will want to use at the top of a script, so that anybody running the code (including our future selves) knows which packages are required.
 
 
-```{r}
-class(i)
-class(I)
-```
-As
-
-In R, variables can be of different types. The most common types are:
-
-- **Numeric**: for real numbers
-- **Integer**: for integer numbers
-- **Character**: for strings of text
-- **Logical**: for logical values (TRUE or FALSE)
-
-When we define a variable, R automatically assigns a type to it. For example, when we defined the variable `lnGDP` as `lnGDP <- log(1000)`, R assigned the type `numeric` to `lnGDP` because the value of `log(1000)` is a real number.
 
 
-```{r}
 
-########################### Data structures ##########################
-#In most applications we produce outputs which do not consist of a single number.
-#Often we have an entire stream of results, or we want to analyse data and have to store larger amounts of data
-#R has a variety of data structures for this purpose.
-#let's clean up first
-rm(list=ls(all=TRUE))
 
-####Vectors 
-#We can create an empty vector and fill it later (with results of our model for example)
-vec1 = vector(length=3)
-#we can define vectors explicitly using the c() function (c for column?)
-vec2 = c(1,2,3)
-vec3 = c(6,7,8)
-#we can also use the sequence operator
-vec4 = 1:10
-#and we can define the step size
-vec5 = seq(1,2,0.1)
-vec5
-#we can call specific entries using square brackets
-vec5[4]
-#if we want to access more elements at once
-vec5[c(4,1)]
 
-####Matrices
-#define a matrix: 3 rows and 2 columns, all elements equal to 0
-mat1 = matrix(0, nrow=3, ncol=2)
-mat1
-#we can also fill it with specific values
-mat2 = matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
-mat2
-#access specific elements (columns,rows)
-mat2[3,1]
-#access entire rows or columns
-mat2[,1]
-mat2[1,]
-#access sub matrices
-mat2[c(1,2),]
-## Combine two column vectors in a matrix
-mat3=cbind(vec1, vec2)
-mat3
-## Combine two row vectors in a matrix
-mat4=rbind(vec1, vec2)
-mat4
-```
+
+
+
